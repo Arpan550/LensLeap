@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">LensLeap</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="username">Username</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="create_your_account">Create your account</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="log_in">Log In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="continue_with">Continue with</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="hello_user">Hello, User !</string>
+    <string name="next">Next</string>
+    <string name="go_to_settings">Go to Settings</string>
+    <string name="log_out">Log Out</string>
+    <string name="change_password">Change Password</string>
+    <string name="push_notifications">Push Notifications</string>
+    <string name="email_notifications">Email Notifications</string>
+    <string name="app_settings">App Settings</string>
+    <string name="language">Language</string>
+    <string name="theme">Theme</string>
+    <string name="about">About</string>
+    <string name="version_1_0">Version: 1.0</string>
+    <string name="settings">Settings</string>
+    <string name="account_settings">Account Settings</string>
+    <string name="notification_settings">Notification Settings</string>
+    <string name="privacy_settings">Privacy Settings</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="enter_your_email">Enter your email</string>
+    <string name="cancel">Cancel</string>
+    <string name="send">Send</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="add_post">Add Post</string>
+    <string name="add_reels">Add Reels</string>
+    <string name="post">Post</string>
+    <string name="write_a_caption">Write a caption</string>
+    <string name="share_to_post">Share To Post</string>
+    <string name="desc">"Your post may appear in posts and can be seen on the posts tab on your profile. "</string>
+    <string name="upload">Upload</string>
+</resources>

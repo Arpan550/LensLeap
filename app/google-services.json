@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "475205758725",
+    "project_id": "lensleap-76de6",
+    "storage_bucket": "lensleap-76de6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:475205758725:android:e84ca4634f680fec8f516c",
+        "android_client_info": {
+          "package_name": "com.example.lensleap"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoCnTdxI1V8YsWfpGHV8hvK7vn6sGfIx0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
