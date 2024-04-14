@@ -40,4 +40,5 @@
     <string name="share_to_post">Share To Post</string>
     <string name="desc">"Your post may appear in posts and can be seen on the posts tab on your profile. "</string>
     <string name="upload">Upload</string>
+    <string name="preview">Preview</string>
 </resources>

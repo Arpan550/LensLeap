@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:padding="18dp"
     android:id="@+id/main"
-    android:layout_margin="18dp"
+    android:layout_margin="14dp"
     android:fitsSystemWindows="true">
 
     <LinearLayout
@@ -42,8 +42,6 @@
 
     </LinearLayout>
 
-
-
     <!-- Caption Input -->
     <EditText
         android:id="@+id/editText_description"
@@ -58,7 +56,6 @@
         android:minLines="2"
         android:maxLines="6"
         android:minHeight="50dp" />
-
 
     <!-- Buttons -->
     <LinearLayout
@@ -107,5 +104,24 @@
             android:textStyle="bold" />
 
     </LinearLayout>
+
+    <!-- VideoView -->
+    <VideoView
+        android:id="@+id/videoView"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="center" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/preview"
+        android:textSize="18sp"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
 
 </LinearLayout>
