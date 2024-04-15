@@ -44,7 +44,7 @@
 
     <!-- Caption Input -->
     <EditText
-        android:id="@+id/editText_description"
+        android:id="@+id/editText_caption"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/write_a_caption"
