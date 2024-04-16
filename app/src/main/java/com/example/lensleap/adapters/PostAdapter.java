@@ -10,68 +10,54 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
 import com.example.lensleap.R;
 import com.example.lensleap.datamodel.PostModel;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
-    Context context;
-    ArrayList<PostModel> postModels;
+public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder> {
+    private Context context;
+    private ArrayList<PostModel> postList;
 
-    public PostAdapter(Context context, ArrayList<PostModel> postModels) {
+    public PostAdapter(Context context, ArrayList<PostModel> postList) {
         this.context = context;
-        this.postModels = postModels;
+        this.postList = postList;
     }
 
     @NonNull
     @Override
-    public PostAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(context).inflate(R.layout.post_layout, parent,false);
-        ViewHolder viewHolder = new ViewHolder(view);
-        return viewHolder;
+    public PostViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(context).inflate(R.layout.post_layout, parent, false);
+        return new PostViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PostAdapter.ViewHolder holder, int position) {
-        PostModel postModel = postModels.get(position);
-        String postImageURL = postModel.getPost_img();
-        String profileImageURL = postModel.getProfile_img();
-        String username = postModel.getUsername();
-        String caption = postModel.getCaption();
+    public void onBindViewHolder(@NonNull PostViewHolder holder, int position) {
+        PostModel postModel = postList.get(position);
 
-        // Load post image into ImageView using Glide
-        Glide.with(context)
-                .load(postImageURL)
-                .placeholder(R.drawable.img_placeholder) // Placeholder image while loading
-                .error(R.drawable.rounded_button_background) // Error image if loading fails
-                .into(holder.post_image);
-
-        // Load profile image into ImageView using Glide
-        Glide.with(context)
-                .load(profileImageURL)
-                .placeholder(R.drawable.img_placeholder) // Placeholder image while loading
-                .error(R.drawable.rounded_button_background) // Error image if loading fails
-                .into(holder.profile_image);
-
-
+        // Bind data to UI elements
+        holder.usernameTextView.setText(postModel.getUsername());
+        holder.captionTextView.setText(postModel.getCaption());
+        Picasso.get().load(postModel.getProfile_img()).into(holder.profileImageView);
+        Picasso.get().load(postModel.getPost_img()).into(holder.postImageView);
     }
 
     @Override
     public int getItemCount() {
-        return postModels.size();
+        return postList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
-        TextView username, caption;
-        ImageView profile_image, post_image;
-        public ViewHolder(@NonNull View itemView) {
+    public static class PostViewHolder extends RecyclerView.ViewHolder {
+        ImageView profileImageView, postImageView;
+        TextView usernameTextView, captionTextView;
+
+        public PostViewHolder(@NonNull View itemView) {
             super(itemView);
-            username = itemView.findViewById(R.id.post_username);
-            profile_image = itemView.findViewById(R.id.profile_image);
-            post_image = itemView.findViewById(R.id.post_image);
-            caption = itemView.findViewById(R.id.post_caption);
+            profileImageView = itemView.findViewById(R.id.profile_image);
+            postImageView = itemView.findViewById(R.id.post_image);
+            usernameTextView = itemView.findViewById(R.id.post_username);
+            captionTextView = itemView.findViewById(R.id.post_caption);
         }
     }
 }
