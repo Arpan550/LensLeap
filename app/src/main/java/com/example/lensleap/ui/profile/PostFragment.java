@@ -80,10 +80,13 @@ public class PostFragment extends Fragment {
     }
 
     private void showPostListener() {
-        db.collection("userPosts")
-                .addSnapshotListener(new EventListener<QuerySnapshot>() {
-                    @Override
-                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        if (currentUser != null) {
+            String currentUserId = currentUser.getUid();
+
+            db.collection("userPosts")
+                    .whereEqualTo("userID", currentUserId) // Assuming "userId" is the field name for the user ID
+                    .addSnapshotListener((value, error) -> {
                         if (error != null) {
                             if (progressDialog.isShowing()) {
                                 progressDialog.dismiss();
@@ -105,9 +108,10 @@ public class PostFragment extends Fragment {
                         if (progressDialog.isShowing()) {
                             progressDialog.dismiss();
                         }
-                    }
-                });
+                    });
+        }
     }
+
 
 
     @Override
