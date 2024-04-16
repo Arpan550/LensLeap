@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.lensleap.R;
 import com.example.lensleap.datamodel.PostModel;
 
@@ -34,9 +35,27 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull PostAdapter.ViewHolder holder, int position) {
-        holder.username.setText(postModels.get(position).getUsername());
-        holder.post_image.setImageResource(postModels.get(position).getPost_img());
-        holder.profile_image.setImageResource(postModels.get(position).getProfile_img());
+        PostModel postModel = postModels.get(position);
+        String postImageURL = postModel.getPost_img();
+        String profileImageURL = postModel.getProfile_img();
+        String username = postModel.getUsername();
+        String caption = postModel.getCaption();
+
+        // Load post image into ImageView using Glide
+        Glide.with(context)
+                .load(postImageURL)
+                .placeholder(R.drawable.img_placeholder) // Placeholder image while loading
+                .error(R.drawable.rounded_button_background) // Error image if loading fails
+                .into(holder.post_image);
+
+        // Load profile image into ImageView using Glide
+        Glide.with(context)
+                .load(profileImageURL)
+                .placeholder(R.drawable.img_placeholder) // Placeholder image while loading
+                .error(R.drawable.rounded_button_background) // Error image if loading fails
+                .into(holder.profile_image);
+
+
     }
 
     @Override
@@ -45,13 +64,14 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        TextView username;
+        TextView username, caption;
         ImageView profile_image, post_image;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            username = itemView.findViewById(R.id.username);
+            username = itemView.findViewById(R.id.post_username);
             profile_image = itemView.findViewById(R.id.profile_image);
             post_image = itemView.findViewById(R.id.post_image);
+            caption = itemView.findViewById(R.id.post_caption);
         }
     }
 }

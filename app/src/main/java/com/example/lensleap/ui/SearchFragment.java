@@ -15,6 +15,7 @@ import com.example.lensleap.adapters.PostAdapter;
 import com.example.lensleap.adapters.SearchPostAdapter;
 import com.example.lensleap.databinding.FragmentHomeBinding;
 import com.example.lensleap.databinding.FragmentSearchBinding;
+import com.example.lensleap.datamodel.MyPostModel;
 import com.example.lensleap.datamodel.PostModel;
 import com.example.lensleap.datamodel.StoryModel;
 
@@ -41,36 +42,6 @@ public class SearchFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         posts=new ArrayList<>();
 
-        posts.add(new PostModel(R.drawable.img_placeholder));
-        posts.add(new PostModel(R.drawable.img_placeholder));
-        posts.add(new PostModel(R.drawable.img));
-        posts.add(new PostModel(R.drawable.img));
-        posts.add(new PostModel(R.drawable.img_placeholder));
-        posts.add(new PostModel(R.drawable.img_placeholder));
-        posts.add(new PostModel(R.drawable.img_placeholder));
-        posts.add(new PostModel(R.drawable.img_placeholder));
-        posts.add(new PostModel(R.drawable.img_placeholder));
-        posts.add(new PostModel(R.drawable.img_placeholder));
-        posts.add(new PostModel(R.drawable.img));
-        posts.add(new PostModel(R.drawable.img_placeholder));
-        posts.add(new PostModel(R.drawable.img_placeholder));
-        posts.add(new PostModel(R.drawable.img_placeholder));
-        posts.add(new PostModel(R.drawable.img_placeholder));
-        posts.add(new PostModel(R.drawable.img_placeholder));
-        posts.add(new PostModel(R.drawable.img_placeholder));
-        posts.add(new PostModel(R.drawable.img_placeholder));
-        posts.add(new PostModel(R.drawable.img_placeholder));
-        posts.add(new PostModel(R.drawable.img_placeholder));
-        posts.add(new PostModel(R.drawable.img_placeholder));
-        posts.add(new PostModel(R.drawable.img_placeholder));
-        posts.add(new PostModel(R.drawable.img_placeholder));
-        posts.add(new PostModel(R.drawable.img_placeholder));
-        posts.add(new PostModel(R.drawable.img_placeholder));
-        posts.add(new PostModel(R.drawable.img_placeholder));
-        posts.add(new PostModel(R.drawable.img_placeholder));
-        posts.add(new PostModel(R.drawable.img_placeholder));
-        posts.add(new PostModel(R.drawable.img_placeholder));
-        posts.add(new PostModel(R.drawable.img_placeholder));
 
         searchBinding.recyclerViewRVsearchFragment.setAdapter(new SearchPostAdapter(getContext(), posts));
 

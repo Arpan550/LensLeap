@@ -33,7 +33,7 @@ public class SearchPostAdapter extends RecyclerView.Adapter<SearchPostAdapter.Vi
 
     @Override
     public void onBindViewHolder(@NonNull SearchPostAdapter.ViewHolder holder, int position) {
-        holder.postImage.setImageResource(posts.get(position).getPost_img());
+        //holder.postImage.setImageResource(posts.get(position).getPost_img());
     }
 
 
