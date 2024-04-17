@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.media3.common.util.UnstableApi;
+import androidx.media3.exoplayer.SimpleExoPlayer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -23,13 +25,15 @@ import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 
-public class ReelsFragment extends Fragment {
+
+@UnstableApi public class ReelsFragment extends Fragment {
     private RecyclerView recyclerView;
     private ReelsAdapter reelsAdapter;
     private ArrayList<ReelsModel> reelsModels;
     private FirebaseFirestore db;
     private FirebaseStorage storage;
     private ProgressDialog progressDialog;
+    private SimpleExoPlayer exoPlayer;
 
     public ReelsFragment() {
         // Required empty public constructor
@@ -56,7 +60,7 @@ public class ReelsFragment extends Fragment {
         progressDialog.setMessage("Loading...");
         progressDialog.show();
 
-        reelsAdapter = new ReelsAdapter(getContext(), reelsModels);
+        reelsAdapter = new ReelsAdapter(getContext(), reelsModels, exoPlayer);
         recyclerView.setAdapter(reelsAdapter);
 
         fetchReelsData();
@@ -124,5 +128,13 @@ public class ReelsFragment extends Fragment {
                 .addOnFailureListener(e -> {
                     Log.e("ReelsFragment", "Error fetching profile image URL: " + e.getMessage());
                 });
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (exoPlayer != null) {
+            exoPlayer.release();
+        }
     }
 }

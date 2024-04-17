@@ -46,6 +46,17 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:32.8.1"))
     implementation("com.squareup.picasso:picasso:2.8")
     implementation("com.github.bumptech.glide:glide:4.16.0")
+    implementation("androidx.media3:media3-exoplayer:1.3.1")
+    implementation("androidx.media3:media3-exoplayer-dash:1.3.1")
+    implementation("androidx.media3:media3-ui:1.3.1")
+//    implementation("com.google.android.exoplayer:exoplayer:r2.19.1")
+//    implementation("com.google.android.exoplayer:exoplayer-core:r2.19.1")
+//    implementation("com.google.android.exoplayer:exoplayer-dash:r2.19.1")
+//    implementation("com.google.android.exoplayer:exoplayer-hls:r2.19.1")
+//    implementation("com.google.android.exoplayer:exoplayer-smoothstreaming:r2.19.1")
+//    implementation("com.google.android.exoplayer:exoplayer-ui:r2.19.1")
+
+
     implementation(libs.firebase.auth)
     implementation(libs.firebase.firestore)
     implementation(libs.firebase.storage)
