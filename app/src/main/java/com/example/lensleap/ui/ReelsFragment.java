@@ -12,8 +12,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.media3.common.util.UnstableApi;
 import androidx.media3.exoplayer.SimpleExoPlayer;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.lensleap.R;
 import com.example.lensleap.adapters.ReelsAdapter;
@@ -25,10 +24,10 @@ import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 
-
-@UnstableApi public class ReelsFragment extends Fragment {
-    private RecyclerView recyclerView;
-    private ReelsAdapter reelsAdapter;
+@UnstableApi
+public class ReelsFragment extends Fragment {
+    private ViewPager2 viewPager;
+    private ReelsAdapter pagerAdapter;
     private ArrayList<ReelsModel> reelsModels;
     private FirebaseFirestore db;
     private FirebaseStorage storage;
@@ -44,8 +43,7 @@ import java.util.ArrayList;
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_reels, container, false);
-        recyclerView = view.findViewById(R.id.postReclyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        viewPager = view.findViewById(R.id.viewpager_reels);
         return view;
     }
 
@@ -60,8 +58,8 @@ import java.util.ArrayList;
         progressDialog.setMessage("Loading...");
         progressDialog.show();
 
-        reelsAdapter = new ReelsAdapter(getContext(), reelsModels, exoPlayer);
-        recyclerView.setAdapter(reelsAdapter);
+        pagerAdapter = new ReelsAdapter(getContext(), reelsModels, viewPager);
+        viewPager.setAdapter(pagerAdapter);
 
         fetchReelsData();
     }
@@ -76,6 +74,10 @@ import java.util.ArrayList;
                             reelsModel.setReels_post(snapshot.getString("videoUrl")); // Assuming "videoUrl" is the field name in Firestore
                             reelsModel.setCaption(snapshot.getString("caption"));
                             reelsModel.setUid(snapshot.getString("userID")); // Assuming "uid" is the user ID field
+
+                            // Set isPaused to true for each ReelsModel object
+                            reelsModel.setPaused(true);
+
                             fetchUserDetails(reelsModel);
                         }
                     }
@@ -86,6 +88,7 @@ import java.util.ArrayList;
                     Log.e("ReelsFragment", "Error fetching reels data: " + e.getMessage());
                 });
     }
+
 
     private void fetchUserDetails(ReelsModel reelsModel) {
         db.collection("users")
@@ -123,7 +126,7 @@ import java.util.ArrayList;
 
                     // Add the updated reelsModel to the list
                     reelsModels.add(reelsModel);
-                    reelsAdapter.notifyDataSetChanged();
+                    pagerAdapter.notifyDataSetChanged();
                 })
                 .addOnFailureListener(e -> {
                     Log.e("ReelsFragment", "Error fetching profile image URL: " + e.getMessage());

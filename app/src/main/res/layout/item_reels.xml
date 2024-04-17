@@ -8,7 +8,7 @@
 
     <!-- VideoView for displaying the video -->
     <androidx.media3.ui.PlayerView
-        android:id="@+id/videoView"
+        android:id="@+id/reelsvideoView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toTopOf="@+id/profileLinearLayout"
@@ -17,7 +17,7 @@
 
     <!-- Caption -->
     <TextView
-        android:id="@+id/captionTextView"
+        android:id="@+id/reelscaptionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
@@ -33,13 +33,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@id/captionTextView"
+        app:layout_constraintBottom_toTopOf="@id/reelscaptionTextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
         <!-- Profile image -->
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/profileImageView"
+            android:id="@+id/reelsprofileImageView"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_gravity="bottom"
@@ -49,7 +49,7 @@
 
         <!-- Username -->
         <TextView
-            android:id="@+id/usernameTextView"
+            android:id="@+id/reelsusernameTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="8dp"
