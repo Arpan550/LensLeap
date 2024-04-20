@@ -14,6 +14,6 @@
         android:icon="@drawable/video_reels"
         android:title="Reels" />
     <item android:id="@+id/profile_user"
-        android:icon="@drawable/profile_user"
+        android:icon="@drawable/person"
         android:title="Profile" />
 </menu>

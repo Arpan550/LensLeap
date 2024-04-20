@@ -5,7 +5,7 @@
     <string name="username">Username</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
-    <string name="create_your_account">Create your account</string>
+    <string name="create_your_account">Create Your Account</string>
     <string name="already_have_an_account">Already have an account?</string>
     <string name="log_in">Log In</string>
     <string name="sign_up">Sign Up</string>
@@ -42,4 +42,7 @@
     <string name="upload">Upload</string>
     <string name="preview">Preview</string>
     <string name="caption">Caption</string>
+    <string name="app_aim">Get Connected and share your moments</string>
+    <string name="app_aim2">Explore the World</string>
+    <string name="let_s_begin">Let\'s Begin</string>
 </resources>

@@ -53,7 +53,7 @@
                             android:layout_weight="1"
                             android:background="@android:color/transparent"
                             android:padding="10dp"
-                            android:src="@drawable/notification"/>
+                            android:src="@drawable/heart"/>
 
                         <ImageButton
                             android:id="@+id/message"
@@ -65,7 +65,7 @@
                             android:padding="10dp"
                             android:clickable="true"
                             android:focusable="true"
-                            android:src="@drawable/messenger" />
+                            android:src="@drawable/chat" />
 
                     </LinearLayout>
 

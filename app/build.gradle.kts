@@ -56,7 +56,7 @@ dependencies {
 //    implementation("com.google.android.exoplayer:exoplayer-smoothstreaming:r2.19.1")
 //    implementation("com.google.android.exoplayer:exoplayer-ui:r2.19.1")
 
-
+    implementation("com.airbnb.android:lottie:6.4.0")
     implementation(libs.firebase.auth)
     implementation(libs.firebase.firestore)
     implementation(libs.firebase.storage)

@@ -6,10 +6,13 @@
     <color name="deep_grey">#999999</color>
     <color name="violet_theme">#571381</color>
     <color name="light_violet_theme">#A334E8</color>
+    <color name="green">#330066</color>
     <color name="deep_red">#880E4F</color>
     <color name="silver">#C0C0C0</color>
     <color name="gold">#FFD700</color>
     <color name="teal">#008080</color>
+    <color name="main_background">#19191b</color>
+    <color name="pink">#e45eb0</color>
     <color name="lavender">#E6E6FA</color>
     <color name="mint_green">#98FB98</color>
     <color name="mustard_yellow">#FFDB58</color>

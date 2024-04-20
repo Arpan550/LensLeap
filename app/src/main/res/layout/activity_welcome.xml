@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WelcomeActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/main_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/welcome_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="600dp"
+            android:background="@drawable/welcome_gradient_color_bg">
+
+            <ImageView
+                android:id="@+id/welcome_circle_view"
+                android:layout_width="360dp"
+                android:layout_height="360dp"
+                android:padding="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.26"
+                app:srcCompat="@drawable/welcome_circle_bg" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/welcome_profile_image"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:padding="20dp"
+                android:src="@drawable/welcome_logo"
+                app:civ_border_color="@android:color/transparent"
+                app:civ_border_width="4dp"
+                app:layout_constraintBottom_toBottomOf="@+id/welcome_circle_view"
+                app:layout_constraintEnd_toEndOf="@+id/welcome_circle_view"
+                app:layout_constraintHorizontal_bias="0.55"
+                app:layout_constraintStart_toStartOf="@+id/welcome_circle_view"
+                app:layout_constraintTop_toTopOf="@+id/welcome_circle_view" />
+
+            <TextView
+                android:id="@+id/app_aim"
+                android:gravity="center"
+                android:foregroundGravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_aim"
+                android:textAlignment="center"
+                app:layout_constraintTop_toBottomOf="@id/welcome_profile_image"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="22dp"
+                tools:layout_editor_absoluteX="182dp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                tools:layout_editor_absoluteY="457dp" />
+
+            <TextView
+                android:id="@+id/app_aim2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_aim2"
+                android:textAlignment="center"
+                app:layout_constraintTop_toBottomOf="@id/app_aim"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="22dp"
+                tools:layout_editor_absoluteX="182dp"
+                android:textSize="15sp"
+                android:textStyle=""
+                android:textColor="@color/white"
+                tools:layout_editor_absoluteY="457dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonBegin"
+            style="@android:style/Widget.Button"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:text="@string/let_s_begin"
+            android:layout_marginTop="30dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_gradient"/>
+
+    </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

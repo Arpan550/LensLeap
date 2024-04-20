@@ -10,5 +10,9 @@
     </style>
 
 
+    <style name="rounded_image_Rounded">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
     <style name="Theme.LensLeap" parent="Base.Theme.LensLeap" />
 </resources>
